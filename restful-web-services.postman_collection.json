@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "8136eadf-216b-4893-99c3-2d48875fe362",
+		"name": "restful-web-services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17048742"
+	},
+	"item": [
+		{
+			"name": "Todo",
+			"item": [
+				{
+					"name": "users/{username}/todos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/users/{{username}}/todos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"{{username}}",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/{username}/todos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"in28minutes22222\",\n    \"description\": \"Learn to Dance 22222\",\n    \"targetDate\": \"2022-11-19T07:27:02\",\n    \"done\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/{{username}}/todos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"{{username}}",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/{username}/todos/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/users/{{username}}/todos/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"{{username}}",
+								"todos",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/{username}/todos/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"in28minutes22222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/{{username}}/todos/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"{{username}}",
+								"todos",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/{username}/todos/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/users/{{username}}/todos/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"{{username}}",
+								"todos",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Helloworld",
+			"item": [
+				{
+					"name": "hello-world",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/hello-world",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hello-world-bean",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/hello-world-bean",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"hello-world-bean"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hello-world/path-variable/{name}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/hello-world/path-variable/{{name}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"hello-world",
+								"path-variable",
+								"{{name}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "authenticate",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"in28minutes\",\n    \"password\":\"dummy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/authenticate",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "host",
+			"value": ""
+		},
+		{
+			"key": "variable_key",
+			"value": ""
+		},
+		{
+			"key": "username",
+			"value": "username"
+		},
+		{
+			"key": "id",
+			"value": "2"
+		}
+	]
+}
