@@ -2,4 +2,4 @@
 
 docker build . --tag demo
 
-docker run -it -p8080:8080 demo:latest
+docker run -d --name "restful-web-services" --restart=always -p 8080:8080 demo:latest
