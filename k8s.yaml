@@ -14,10 +14,6 @@ spec:
       containers:
         - name: myappcontai
           image: 335900224728.dkr.ecr.ap-southeast-1.amazonaws.com/springboot_cb:latest
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
           ports:
             - name: tcp
               containerPort: 8080
