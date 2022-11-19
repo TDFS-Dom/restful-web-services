@@ -12,7 +12,7 @@ spec:
         app: myapp
     spec:
       containers:
-        - name: restful-web-services-poc
+        - name: myappcontai
           image: 335900224728.dkr.ecr.ap-southeast-1.amazonaws.com/springboot_cb:latest
           resources:
             limits:
